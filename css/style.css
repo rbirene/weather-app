@@ -1,0 +1,78 @@
+html{
+  width: 100vw;
+  height: 100vh;
+}
+
+body{
+  color: #fff;
+  font-family: 'Poppins', sans-serif;
+  overflow: hidden;
+}
+
+.container{
+  display: flex;
+  align-items: center;
+  height: 100vh;
+  justify-content: center;
+}
+
+main{
+  margin: 50px 300px;
+}
+
+.date, .message{
+  color: #616167;
+  margin: 0;
+}
+
+.location{
+  font-weight: 800;
+  letter-spacing: 1px;
+  margin: 0;
+}
+
+.temperature{
+  font-size: 100px;
+  letter-spacing: -10px;
+  margin: 0;
+}
+
+.degree{
+  letter-spacing: 1px;
+}
+
+.description{
+  font-size: 40px;
+  letter-spacing: 1px;
+  margin: 0;
+  text-transform: capitalize;
+}
+
+.weather{
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.rain{
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.25));
+  animation: stem 0.5s linear infinite;
+  height: 100px;
+  position: absolute;
+  top: -150px;
+  width: 1px;
+  animation: raindrop 0.5s linear infinite;
+}
+
+@keyframes raindrop {
+  0% {
+    transform: translateY(0vh);
+  }
+  75% {
+    transform: translateY(80vh);
+  }
+  100% {
+    transform: translateY(100vh);
+  }
+}

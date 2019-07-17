@@ -1,8 +1,7 @@
-import React from 'react';
-import './App.css';
-
 //after window loads...
 window.addEventListener("load", ()=>{
+
+  const weather = document.querySelector(".weather");
 
   let long;
   let lat;
@@ -28,8 +27,6 @@ window.addEventListener("load", ()=>{
     navigator.geolocation.getCurrentPosition(position =>{
       long = position.coords.longitude;
       lat = position.coords.latitude;
-
-      //display current location
 
       //get current weather
       const weatherAPI = `https://api.weatherbit.io/v2.0/current?lat=${lat}&lon=${long}&key=e8f98e846616494191b612774aa131bc`;
@@ -65,6 +62,7 @@ window.addEventListener("load", ()=>{
       //rain
       case (weatherCode < 523):
         message.innerHTML = "I'd love to tell you that it's sunny right now, but then I'd be lying.";
+        rain();
         break;
       //snow
       case(weatherCode < 624):
@@ -81,6 +79,7 @@ window.addEventListener("load", ()=>{
       //cloudy or meh
       case (weatherCode < 901):
         message.innerHTML = "Look, it's not sunshine, but you and I both know it could be much worse.";
+        rain();
         break;
       //default
       default:
@@ -88,22 +87,13 @@ window.addEventListener("load", ()=>{
     }
   }
 
+  function rain(){
+    document.body.style.background = "linear-gradient(to bottom, #202020, #111119)";
+    for (i=0; i<20; i++){
+      let randomNumber1 = Math.random();
+      let randomNumber100 = ((Math.random()*100)+1);
+      weather.innerHTML += `<div class="rain" style="animation-delay: ${randomNumber1}s; left: ${randomNumber100}%"></div>`;
+    }
+  }
+
 });
-
-function App() {
-  return (
-    <main>
-      <p className="location">Updating...</p>
-      <p className="date">Updating...</p>
-      <br/>
-      <p className="temperature">
-        <span className="degree">0</span> <sup className="symbol">°</sup>C
-      </p>
-      <br/>
-      <p className="description">Updating...</p>
-      <p className="message">Updating...</p>
-      </main>
-  );
-}
-
-export default App;
