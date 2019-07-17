@@ -105,8 +105,8 @@ window.addEventListener("load", ()=>{
   }
 
   function sunny(){
-    document.body.style.background = "linear-gradient(rgb(116, 171, 181), rgb(184, 182, 166))";
-    weather.innerHTML += '<div class="sun"></div>';
+    document.body.style.background = "linear-gradient(rgb(116, 171, 181), rgb(85, 160, 169))";
+    weather.innerHTML += '<div class="sun"></div><div class="sunlight"></div><div class="sunring"></div>';
   }
 
 });
