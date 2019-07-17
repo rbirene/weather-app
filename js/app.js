@@ -12,9 +12,6 @@ window.addEventListener("load", ()=>{
   const months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
   let month = months[currentDate.getMonth()];
   let year = currentDate.getFullYear();
-  let hour = currentDate.getHours();
-  let minute = currentDate.getMinutes();
-  let time = `${hour}:${minute}`;
   const date = document.querySelector(".date");
   const location = document.querySelector(".location");
   const degree = document.querySelector(".degree");
@@ -36,7 +33,7 @@ window.addEventListener("load", ()=>{
           return response.json();
         })
         .then(response =>{
-          date.innerHTML =  `${day} ${dateNo} ${month} ${year} — ${time}`;
+          date.innerHTML =  `${day} ${dateNo} ${month} ${year}`;
           location.innerHTML = response.data[0]["city_name"];
           degree.innerHTML = response.data[0]["temp"];
           description.innerHTML = response.data[0]["weather"]["description"];
@@ -47,7 +44,7 @@ window.addEventListener("load", ()=>{
   } else {
     //...set elements to unknown
     console.log("Geolocation has been disabled.")
-    date.innerHTML =  `${day} ${dateNo} ${month} ${year} — ${time}`;
+    date.innerHTML =  `${day} ${dateNo} ${month} ${year}`;
     location.innerHTML = "Location Unknown";
     degree.innerHTML = 0;
     description.innerHTML = "Weather Unknown";
