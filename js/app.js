@@ -59,11 +59,12 @@ window.addEventListener("load", ()=>{
       //rain
       case (weatherCode < 523):
         message.innerHTML = "I'd love to tell you that it's sunny right now, but then I'd be lying.";
-        rain();
+        snow();
         break;
       //snow
       case(weatherCode < 624):
         message.innerHTML = "Hope you've got anti-freeze 'cause you're gonna need it.";
+        snow();
         break;
       //fog or reduced visibility
       case(weatherCode < 752):
@@ -72,6 +73,7 @@ window.addEventListener("load", ()=>{
       //sunny
       case (weatherCode < 803):
         message.innerHTML = "Grab your sunglasses! Today is going to be a beautiful day!";
+        sunny();
         break;
       //cloudy or meh
       case (weatherCode < 901):
@@ -85,12 +87,26 @@ window.addEventListener("load", ()=>{
   }
 
   function rain(){
-    document.body.style.background = "linear-gradient(to bottom, #202020, #111119)";
+    document.body.style.background = "linear-gradient(rgb(60, 67, 81), rgb(35, 42, 54))";
     for (i=0; i<20; i++){
       let randomNumber1 = Math.random();
       let randomNumber100 = ((Math.random()*100)+1);
       weather.innerHTML += `<div class="rain" style="animation-delay: ${randomNumber1}s; left: ${randomNumber100}%"></div>`;
     }
+  }
+
+  function snow(){
+    document.body.style.background = "linear-gradient(rgb(102, 124, 128), rgb(82, 95, 97))";
+    for (i=0; i<20; i++){
+      let randomNumber10 = ((Math.random()*10)+1);
+      let randomNumber100 = ((Math.random()*100)+1);
+      weather.innerHTML += `<div class="snow" style="animation-delay: ${randomNumber10}s; left: ${randomNumber100}%"></div>`;
+    }
+  }
+
+  function sunny(){
+    document.body.style.background = "linear-gradient(rgb(116, 171, 181), rgb(184, 182, 166))";
+    weather.innerHTML += '<div class="sun"></div>';
   }
 
 });
