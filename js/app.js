@@ -59,7 +59,7 @@ window.addEventListener("load", ()=>{
       //rain
       case (weatherCode < 523):
         message.innerHTML = "I'd love to tell you that it's sunny right now, but then I'd be lying.";
-        snow();
+        rain();
         break;
       //snow
       case(weatherCode < 624):
@@ -77,8 +77,7 @@ window.addEventListener("load", ()=>{
         break;
       //cloudy or meh
       case (weatherCode < 901):
-        message.innerHTML = "Look, it's not sunshine, but you and I both know it could be much worse.";
-        rain();
+        message.innerHTML = "Look, it's not sunshine, but you and I both know it could be much worse."
         break;
       //default
       default:
@@ -107,6 +106,32 @@ window.addEventListener("load", ()=>{
   function sunny(){
     document.body.style.background = "linear-gradient(rgb(116, 171, 181), rgb(85, 160, 169))";
     weather.innerHTML += '<div class="sun"></div><div class="sunlight"></div><div class="sunring"></div>';
+  }
+
+  function thunder(){
+    document.body.style.background = "linear-gradient(rgb(76, 82, 101), rgb(15, 15, 15))";
+    weather.innerHTML += '<div class="lightning"></div>';
+    for (i=0; i<10; i++){
+      let randomDelay = ((Math.random()*10)+1);
+      let randomDimension = (Math.random() * (800 - 100) + 100);
+      let randomTop = ((Math.random()*100)+1);
+      let randomRight = ((Math.random()*100)+1);
+      weather.innerHTML += `<div class="cloud cloudset-one" style="height: ${randomDimension}px; top: ${randomTop}%; right: ${randomRight}%; width: ${randomDimension}px;"></div>`;
+    }
+    for (i=0; i<10; i++){
+      let randomDelay = ((Math.random()*10)+1);
+      let randomDimension = (Math.random() * (800 - 100) + 100);
+      let randomTop = ((Math.random()*100)+1);
+      let randomRight = ((Math.random()*100)+1);
+      weather.innerHTML += `<div class="cloud cloudset-two" style="height: ${randomDimension}px; top: ${randomTop}%; right: ${randomRight}%; width: ${randomDimension}px;"></div>`;
+    }
+    for (i=0; i<10; i++){
+      let randomDelay = ((Math.random()*10)+1);
+      let randomDimension = (Math.random() * (800 - 100) + 100);
+      let randomTop = ((Math.random()*100)+1);
+      let randomRight = ((Math.random()*100)+1);
+      weather.innerHTML += `<div class="cloud cloudset-three" style="height: ${randomDimension}px; top: ${randomTop}%; right: ${randomRight}%; width: ${randomDimension}px;"></div>`;
+    }
   }
 
 });

@@ -68,7 +68,7 @@ main{
   width: 1px;
 }
 
-@keyframes raindrop {
+@keyframes raindrop{
   0%{
     transform: translateY(0vh);
   }
@@ -92,7 +92,7 @@ main{
   width: 10px;
 }
 
-@keyframes snowfall {
+@keyframes snowfall{
   0%{
     transform: translateY(0vh);
   }
@@ -132,7 +132,7 @@ main{
   width: 0px;
 }
 
-@keyframes sunglare {
+@keyframes sunglare{
   0%{
     right: 25%;
   }
@@ -151,4 +151,84 @@ main{
   right: 200px;
   top: 10px;
   width: 500px;
+}
+
+.cloud{
+  animation-fill-mode: backwards;
+  background-color: rgba(255, 255, 255, 0.21);
+  border-radius: 50%;
+  filter: blur(30px);
+  height: 500px;
+  position: absolute;
+  width: 500px;
+}
+
+.cloudset-one{
+  animation: clouddriftone 10s alternate infinite ease;
+}
+
+@keyframes clouddriftone{
+  0%{
+    transform: translateX(90%);
+  }
+  100%{
+    transform: translateY(-40%);
+  }
+}
+
+.cloudset-two{
+  animation: clouddrifttwo 7s alternate infinite ease;
+}
+
+@keyframes clouddrifttwo{
+  0%{
+    transform: translateY(-20%);
+  }
+  100%{
+    transform: translateX(40%);
+  }
+}
+
+.cloudset-three{
+  animation: clouddriftthree 8s alternate infinite ease;
+}
+
+@keyframes clouddrifttwo{
+  0%{
+    transform: translateY(100%);
+  }
+  100%{
+    transform: translateX(-20%);
+  }
+}
+
+.lightning{
+  animation: flash 5s alternate infinite ease-in-out;
+  background: #fff;
+  border-radius: 50%;
+  box-shadow: 0px 0px 30px 10px #e6e6c8, 0px 0px 10px 5px white;
+  height: 0px;
+  margin: 0;
+  position: absolute;
+  right: 200px;
+  top: 10px;
+  width: 0px;
+}
+
+@keyframes flash{
+  0%{
+    //dim
+  }
+  25%{
+    //flash
+  }
+  50%{
+    //dim
+  }
+  75%{
+    //flash
+  }
+  100%{
+    //dim
+  }
 }
