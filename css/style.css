@@ -154,13 +154,12 @@ main{
 }
 
 .cloud{
+  will-change: filter, transform;
   animation-fill-mode: backwards;
-  background-color: rgba(255, 255, 255, 0.21);
+  background-color: rgba(255, 255, 255, 0.06);
   border-radius: 50%;
   filter: blur(30px);
-  height: 500px;
   position: absolute;
-  width: 500px;
 }
 
 .cloudset-one{
@@ -200,6 +199,18 @@ main{
   100%{
     transform: translateX(-20%);
   }
+}
+
+.covered-sun{
+  background: #fff;
+  border-radius: 50%;
+  box-shadow: 0px 0px 30px 10px #e6e6c8, 0px 0px 10px 5px white;
+  height: 0px;
+  margin: 0;
+  position: absolute;
+  right: 300px;
+  top: 100px;
+  width: 0px;
 }
 
 .lightning{

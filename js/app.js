@@ -69,6 +69,7 @@ window.addEventListener("load", ()=>{
       //fog or reduced visibility
       case(weatherCode < 752):
         message.innerHTML = "Damn, I can't see shit.";
+        fog();
         break;
       //sunny
       case (weatherCode < 803):
@@ -82,6 +83,29 @@ window.addEventListener("load", ()=>{
       //default
       default:
         message.innerHTML = "I...honestly have no idea.";
+    }
+  }
+
+  function fog(){
+    document.body.style.background = "linear-gradient(rgb(122, 126, 138), rgb(81, 85, 89))";
+    weather.innerHTML += '<div class="covered-sun"></div>';
+    for (i=0; i<10; i++){
+      let randomDimension = (Math.random() * (800 - 100) + 100);
+      let randomTop = ((Math.random()*100)+1);
+      let randomRight = ((Math.random()*100)+1);
+      weather.innerHTML += `<div class="cloud cloudset-one" style="height: ${randomDimension}px; top: ${randomTop}%; right: ${randomRight}%; width: ${randomDimension}px;"></div>`;
+    }
+    for (i=0; i<10; i++){
+      let randomDimension = (Math.random() * (800 - 100) + 100);
+      let randomTop = ((Math.random()*100)+1);
+      let randomRight = ((Math.random()*100)+1);
+      weather.innerHTML += `<div class="cloud cloudset-two" style="height: ${randomDimension}px; top: ${randomTop}%; right: ${randomRight}%; width: ${randomDimension}px;"></div>`;
+    }
+    for (i=0; i<10; i++){
+      let randomDimension = (Math.random() * (800 - 100) + 100);
+      let randomTop = ((Math.random()*100)+1);
+      let randomRight = ((Math.random()*100)+1);
+      weather.innerHTML += `<div class="cloud cloudset-three" style="height: ${randomDimension}px; top: ${randomTop}%; right: ${randomRight}%; width: ${randomDimension}px;"></div>`;
     }
   }
 
