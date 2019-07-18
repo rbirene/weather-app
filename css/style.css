@@ -243,3 +243,20 @@ main{
     //dim
   }
 }
+
+@media (max-width: 992px){
+  main{
+    margin: 0;
+  }
+  .date, .location, .message{
+    font-size: 30px;
+  }
+  
+  .temperature{
+    font-size: 200px;
+  }
+  
+  .description{
+    font-size: 60px;
+  }
+}
