@@ -55,6 +55,7 @@ window.addEventListener("load", ()=>{
       //thunderstorm
       case (weatherCode < 234):
         message.innerHTML = "I'd grab an umbrella if I were you. On second thought...maybe just stay inside for the day.";
+        thunder();
         break;
       //rain
       case (weatherCode < 523):
@@ -157,29 +158,41 @@ window.addEventListener("load", ()=>{
   }
 
   function thunder(){
-    document.body.style.background = "linear-gradient(rgb(76, 82, 101), rgb(15, 15, 15))";
+    document.body.style.background = "linear-gradient(rgb(60, 67, 81), rgb(35, 42, 54))";    
     weather.innerHTML += '<div class="lightning"></div>';
+    
+    function changeLightningPosition(){
+      let lightning = document.querySelector(".lightning");
+      lightning.style.right = (((Math.random()*100)/2)+1)+"%";
+        lightning.style.top = ((Math.random()*100)+1)+"%";
+    }
+    setInterval(changeLightningPosition, 6000);
+
+    for (i=0; i<20; i++){
+      let randomDelay = Math.random();
+      let randomPosition = ((Math.random()*100)+1);
+      weather.innerHTML += `<div class="rain" style="animation-delay: ${randomDelay}s; left: ${randomPosition}%"></div>`;
+    }
+
     for (i=0; i<10; i++){
-      let randomDelay = ((Math.random()*10)+1);
       let randomDimension = (Math.random() * (800 - 100) + 100);
       let randomTop = ((Math.random()*100)+1);
       let randomRight = ((Math.random()*100)+1);
       weather.innerHTML += `<div class="cloud cloudset-one" style="height: ${randomDimension}px; top: ${randomTop}%; right: ${randomRight}%; width: ${randomDimension}px;"></div>`;
     }
-    for (i=0; i<10; i++){
-      let randomDelay = ((Math.random()*10)+1);
-      let randomDimension = (Math.random() * (800 - 100) + 100);
-      let randomTop = ((Math.random()*100)+1);
-      let randomRight = ((Math.random()*100)+1);
-      weather.innerHTML += `<div class="cloud cloudset-two" style="height: ${randomDimension}px; top: ${randomTop}%; right: ${randomRight}%; width: ${randomDimension}px;"></div>`;
-    }
-    for (i=0; i<10; i++){
-      let randomDelay = ((Math.random()*10)+1);
-      let randomDimension = (Math.random() * (800 - 100) + 100);
-      let randomTop = ((Math.random()*100)+1);
-      let randomRight = ((Math.random()*100)+1);
-      weather.innerHTML += `<div class="cloud cloudset-three" style="height: ${randomDimension}px; top: ${randomTop}%; right: ${randomRight}%; width: ${randomDimension}px;"></div>`;
-    }
   }
 
 });
+
+//add new element to existing parent
+function addElement(elementParent, elementTag, elementClass) {
+  let parent = elementParent;
+  var newElement = document.createElement(elementTag);
+  newElement.className = elementClass;
+  parent.appendChild(newElement);
+}
+
+//remove existing element from existing parent
+function removeElement(element) {
+  element.parentNode.removeChild(element);
+}

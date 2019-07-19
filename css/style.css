@@ -214,33 +214,86 @@ main{
 }
 
 .lightning{
-  animation: flash 5s alternate infinite ease-in-out;
-  background: #fff;
+  animation: flash 6s infinite;
+  animation-fill-mode: forwards;
+  background: radial-gradient(
+    rgba(255, 250, 210, 0.6) 0%,
+    rgba(255, 250, 210, 0.45) 35%,
+    rgba(255, 255, 255, 0.13) 60%,
+    rgba(255, 255, 255, 0) 70%
+  );
   border-radius: 50%;
-  box-shadow: 0px 0px 30px 10px #e6e6c8, 0px 0px 10px 5px white;
-  height: 0px;
+  filter: blur(1.5px);
+  height: 2000px;
   margin: 0;
   position: absolute;
-  right: 200px;
-  top: 10px;
-  width: 0px;
+  width: 2000px;
 }
 
 @keyframes flash{
   0%{
-    //dim
+    background: radial-gradient(
+      rgba(255, 255, 255, 0) 0%,
+      rgba(255, 255, 255, 0) 35%,
+      rgba(255, 255, 255, 0) 60%,
+      rgba(255, 255, 255, 0) 70%
+    );
   }
-  25%{
-    //flash
+  2%{
+    background: radial-gradient(
+      rgba(255, 250, 210, 0.2) 0%,
+      rgba(255, 250, 210, 0.1) 35%,
+      rgba(255, 255, 255, 0.05) 60%,
+      rgba(255, 255, 255, 0) 70%
+    );
   }
-  50%{
-    //dim
+  3%{
+    background: radial-gradient(
+      rgba(255, 250, 210, 0.4) 0%,
+      rgba(255, 250, 210, 0.2) 35%,
+      rgba(255, 255, 255, 0.1) 60%,
+      rgba(255, 255, 255, 0) 70%
+    );
   }
-  75%{
-    //flash
+  6%{
+    background: radial-gradient(
+      rgba(255, 255, 255, 0) 0%,
+      rgba(255, 255, 255, 0) 35%,
+      rgba(255, 255, 255, 0) 60%,
+      rgba(255, 255, 255, 0) 70%
+    );
+  }
+  9%{
+    background: radial-gradient(
+      rgba(255, 250, 210, 0.4) 0%,
+      rgba(255, 250, 210, 0.2) 35%,
+      rgba(255, 255, 255, 0.1) 60%,
+      rgba(255, 255, 255, 0) 70%
+    );
+  }
+  10%{
+    background: radial-gradient(
+      rgba(255, 250, 210, 0.2) 0%,
+      rgba(255, 250, 210, 0.1) 35%,
+      rgba(255, 255, 255, 0.05) 60%,
+      rgba(255, 255, 255, 0) 70%
+    );
+  }
+  12%{
+    background: radial-gradient(
+      rgba(255, 255, 255, 0) 0%,
+      rgba(255, 255, 255, 0) 35%,
+      rgba(255, 255, 255, 0) 60%,
+      rgba(255, 255, 255, 0) 70%
+    );
   }
   100%{
-    //dim
+    background: radial-gradient(
+      rgba(255, 255, 255, 0) 0%,
+      rgba(255, 255, 255, 0) 35%,
+      rgba(255, 255, 255, 0) 60%,
+      rgba(255, 255, 255, 0) 70%
+    );
   }
 }
 
