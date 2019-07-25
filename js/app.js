@@ -16,7 +16,6 @@ window.addEventListener("load", ()=>{
   const location = document.querySelector(".location");
   const degree = document.querySelector(".degree");
   const description = document.querySelector(".description");
-  const message = document.querySelector(".message");
 
   //if user's geolocation is available...
   if (navigator.geolocation){
@@ -35,7 +34,7 @@ window.addEventListener("load", ()=>{
         .then(response =>{
           date.innerHTML =  `${day} ${dateNo} ${month} ${year}`;
           location.innerHTML = response.data[0]["city_name"];
-          degree.innerHTML = response.data[0]["temp"];
+          degree.innerHTML = Math.round(response.data[0]["temp"]);
           description.innerHTML = response.data[0]["weather"]["description"];
           let weatherCode = response.data[0]["weather"]["code"];
           identifyWeather(weatherCode);
@@ -54,57 +53,50 @@ window.addEventListener("load", ()=>{
     switch(true){
       //thunderstorm
       case (weatherCode < 234):
-        message.innerHTML = "I'd grab an umbrella if I were you. On second thought...maybe just stay inside for the day.";
         thunder();
         break;
       //rain
       case (weatherCode < 523):
-        message.innerHTML = "I'd love to tell you that it's sunny right now, but then I'd be lying.";
         rain();
         break;
       //snow
       case(weatherCode < 624):
-        message.innerHTML = "Hope you've got anti-freeze 'cause you're gonna need it.";
         snow();
         break;
       //fog or reduced visibility
       case(weatherCode < 752):
-        message.innerHTML = "Damn, I can't see shit.";
         fog();
         break;
       //sunny
       case (weatherCode < 803):
-        message.innerHTML = "Grab your sunglasses! Today is going to be a beautiful day!";
         sunny();
         break;
       //cloudy or meh
       case (weatherCode < 901):
-        message.innerHTML = "Look, it's not sunshine, but you and I both know it could be much worse."
         cloudy();
         break;
       //default
       default:
-        message.innerHTML = "I...honestly have no idea.";
     }
   }
 
   function cloudy(){
     document.body.style.background = "linear-gradient(rgb(124, 165, 187), rgb(72, 88, 97))";
-    weather.innerHTML += '<div class="sun"></div><div class="sunlight"></div>';
+    weather.innerHTML += '<div class="sun"></div>';
     for (i=0; i<10; i++){
-      let randomDimension = (Math.random() * (800 - 100) + 100);
+      let randomDimension = (Math.random() * (800 - 100) + 1);
       let randomTop = ((Math.random()*100)+1);
       let randomRight = ((Math.random()*100)+1);
       weather.innerHTML += `<div class="cloud cloudset-one" style="height: ${randomDimension}px; top: ${randomTop}%; right: ${randomRight}%; width: ${randomDimension}px;"></div>`;
     }
     for (i=0; i<10; i++){
-      let randomDimension = (Math.random() * (800 - 100) + 100);
+      let randomDimension = (Math.random() * (800 - 100) + 1);
       let randomTop = ((Math.random()*100)+1);
       let randomRight = ((Math.random()*100)+1);
       weather.innerHTML += `<div class="cloud cloudset-two" style="height: ${randomDimension}px; top: ${randomTop}%; right: ${randomRight}%; width: ${randomDimension}px;"></div>`;
     }
     for (i=0; i<10; i++){
-      let randomDimension = (Math.random() * (800 - 100) + 100);
+      let randomDimension = (Math.random() * (800 - 100) + 1);
       let randomTop = ((Math.random()*100)+1);
       let randomRight = ((Math.random()*100)+1);
       weather.innerHTML += `<div class="cloud cloudset-three" style="height: ${randomDimension}px; top: ${randomTop}%; right: ${randomRight}%; width: ${randomDimension}px;"></div>`;

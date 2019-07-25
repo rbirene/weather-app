@@ -1,6 +1,6 @@
 html{
-  width: 100vw;
   height: 100vh;
+  width: 100vw;
 }
 
 body{
@@ -20,7 +20,7 @@ main{
   margin: 50px 300px;
 }
 
-.date, .message{
+.date{
   color: rgba(255, 255, 255, 0.5);
   margin: 0;
 }
@@ -299,9 +299,9 @@ main{
 
 @media (max-width: 992px){
   main{
-    margin: 0;
+    margin: 0 100px;
   }
-  .date, .location, .message{
+  .date, .location{
     font-size: 30px;
   }
   
