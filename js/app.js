@@ -84,21 +84,21 @@ window.addEventListener("load", ()=>{
 
   function clouds(){
     for (i=0; i<10; i++){
-      let randomDimension = (Math.random() * (800 - 100) + 1);
-      let randomTop = ((Math.random()*100)+1);
-      let randomRight = ((Math.random()*100)+1);
+      let randomDimension = (Math.random()*(800-100))+1;
+      let randomTop = (Math.random()*100)+1;
+      let randomRight = (Math.random()*100)+1;
       weather.innerHTML += `<div class="cloud cloudset-one" style="height: ${randomDimension}px; top: ${randomTop}%; right: ${randomRight}%; width: ${randomDimension}px;"></div>`;
     }
     for (i=0; i<10; i++){
-      let randomDimension = (Math.random() * (800 - 100) + 1);
-      let randomTop = ((Math.random()*100)+1);
-      let randomRight = ((Math.random()*100)+1);
+      let randomDimension = (Math.random()*(800-100))+1;
+      let randomTop = (Math.random()*100)+1;
+      let randomRight = (Math.random()*100)+1;
       weather.innerHTML += `<div class="cloud cloudset-two" style="height: ${randomDimension}px; top: ${randomTop}%; right: ${randomRight}%; width: ${randomDimension}px;"></div>`;
     }
     for (i=0; i<10; i++){
-      let randomDimension = (Math.random() * (800 - 100) + 1);
-      let randomTop = ((Math.random()*100)+1);
-      let randomRight = ((Math.random()*100)+1);
+      let randomDimension = (Math.random()*(800-100))+1;
+      let randomTop = (Math.random()*100)+1;
+      let randomRight = (Math.random()*100)+1;
       weather.innerHTML += `<div class="cloud cloudset-three" style="height: ${randomDimension}px; top: ${randomTop}%; right: ${randomRight}%; width: ${randomDimension}px;"></div>`;
     }
   }
