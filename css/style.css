@@ -31,8 +31,22 @@ main{
   justify-content: center;
 }
 
+.search{
+  background: #ffffff00;
+  border: 2px solid #fff;
+  border-left: 0;
+  border-right: 0;
+  border-top: 0;
+  color: #fff;
+  margin: 30px 0;
+}
+
+.search::placeholder{
+  color: #fff;
+}
+
 .date{
-  color: rgba(255, 255, 255, 0.5);
+  color: #ffffff80;
   margin: 0;
 }
 
@@ -314,10 +328,9 @@ main{
   main{
     margin: 0 100px;
   }
-  .date, .location{
-    font-size: 30px;
+  .date, .location, .location-search{
+    font-size: 40px;
   }
-  
   .temperature{
     font-size: 200px;
   }

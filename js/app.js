@@ -1,8 +1,6 @@
 //after window loads...
 window.addEventListener("load", ()=>{
 
-  const weather = document.querySelector(".weather");
-
   let long;
   let lat;
   let currentDate = new Date();
@@ -12,10 +10,13 @@ window.addEventListener("load", ()=>{
   const months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
   let month = months[currentDate.getMonth()];
   let year = currentDate.getFullYear();
+
+  const search = document.querySelector(".search");
   const date = document.querySelector(".date");
   const location = document.querySelector(".location");
   const degree = document.querySelector(".degree");
   const description = document.querySelector(".description");
+  const weather = document.querySelector(".weather");
 
   //if user's geolocation is available...
   if (navigator.geolocation){
